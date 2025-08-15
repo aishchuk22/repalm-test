@@ -17,6 +17,7 @@ body {
   line-height: 129%;
   letter-spacing: -0.02em;
   color: #1f1f1f;
+  min-width: 320px;
 }
 
 p,
@@ -53,9 +54,20 @@ button {
   border: none;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
 /* ---------------------------- */
 
 /* -------------Task 1 styles--------------- */
+
+.task-1 {
+  margin-top: 20px;
+}
 
 .task-name {
   font-size: 24px;
@@ -77,7 +89,7 @@ button {
   padding: 31px 18px;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
-  max-height: 400px;
+  height: 400px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -172,6 +184,13 @@ button {
   color: #fff;
 }
 
+@media (max-width: 320px) {
+  .item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 /* ---------------------------- */
 
 /* -------------Task 2 styles--------------- */
@@ -179,6 +198,7 @@ button {
 .task-2 {
   width: 100%;
   background-color: #e0e0e0;
+  margin: 0 auto;
   margin-bottom: 120px;
 }
 
@@ -193,21 +213,21 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
   transition: all 0.3s ease-in-out;
 }
 
 .primary-item-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   padding: 16px;
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
+  text-align: center;
 }
 
-.primary-item-name:hover,
-.primary-item-name:focus,
-.primary-item-name:active {
+.primary-item-name:hover {
   background-color: #1f1f1f;
   color: #fff;
   border-radius: 8px;
@@ -220,10 +240,9 @@ button {
   gap: 8px;
   position: absolute;
   top: 100%;
-  left: 0;
   padding: 8px;
   background-color: rgb(100, 101, 101);
-  width: 100%;
+  min-width: 150px;
   border: 1px solid #e0e0e0;
   color: #fff;
   border-radius: 8px;
@@ -261,8 +280,53 @@ button {
   transform: translateY(0);
 }
 
-.nav-item:focus-within .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    padding: 12px 8px;
+  }
+
+  .primary-item-name {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 4px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 8px;
+    justify-content: center;
+  }
+
+  .nav-item {
+    align-content: center;
+  }
+
+  .primary-item-name {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 12px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .dropdown {
+    left: 100%;
+    top: -100%;
+    min-width: 100px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 100%;
+  }
 }
